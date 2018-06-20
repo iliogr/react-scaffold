@@ -6,12 +6,12 @@ import * as actions from '../Actions'
 class Main extends Component {
 
     componentWillMount = () => {
-        this.props.getMarketDogs();
     }
 
     render() {
         return (
             <div id="Main">
+                hi
             </div>
         );
     }

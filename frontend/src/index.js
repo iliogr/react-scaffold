@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Assets/css/index.css';
+import './Assets/sass/index.scss';
 import App from './App';
 import rootReducer from './Reducers'
 import registerServiceWorker from './registerServiceWorker';
@@ -22,4 +22,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-registerServiceWorker();

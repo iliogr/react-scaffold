@@ -109,14 +109,14 @@ $breakpoints:(
 
 @each $value in $flex-list{
 	.fl-#{nth($value, 1)}{
-		flex: 0 1 nth($value, 1)+%;
+		flex: 0 1 nth($value, 1)"%";
 		// transition:1s ease all;
 	}
 	.fl-offset-#{nth($value, 1)}{
-		margin-left: nth($value, 1)+%;
+		margin-left: nth($value, 1)"%";
 	}
 	.fl-inset-#{nth($value, 1)}{
-		margin-right: nth($value, 1)+%;
+		margin-right: nth($value, 1)"%";
 	}
 }
 
@@ -124,14 +124,14 @@ $breakpoints:(
 	@media only screen and (min-width: nth($values, 1)+px) and (max-width: nth($values, 2)+px) {
 		@each $value in $flex-list{
 			.fl-#{nth($values, 3)}-#{nth($value, 1)}{
-				flex: 1 1 nth($value, 1)+%;
+				flex: 1 1 nth($value, 1)"%";
 			}
 			.fl-#{nth($values, 3)}-offset-#{nth($value, 1)}{
-				margin-left: nth($value, 1)+%;
+				margin-left: nth($value, 1)"%";
 				@if nth($value, 1) == 0 {margin-left: 0; margin-right: 0}
 			}
 			.fl-#{nth($values, 3)}-inset-#{nth($value, 1)}{
-				margin-right: nth($value, 1)+%;
+				margin-right: nth($value, 1)"%";
 			}
 		}
 	}

@@ -1,9 +1,12 @@
-import React, {Component} from 'react'
-import {Route, Redirect, withRouter} from 'react-router-dom'
-import Main from './Components/Main'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import * as actions from './Actions'
+import React, {Component}                          from 'react'
+import {BrowserRouter as Router, Route, Redirect}  from 'react-router-dom'
+import { withRouter }                              from "react-router";
+
+import {bindActionCreators}                        from 'redux'
+import {connect}                                   from 'react-redux'
+
+import * as actions                                from './Actions'
+import Main                                        from './Components/Main'
 
 class App extends Component {
 
@@ -17,7 +20,9 @@ class App extends Component {
     render() {
         return (
             <div id="App">
-                <Route path="/" component={Main}/>
+               <Router>
+                  <Route path="/" component={Main}/>
+               </Router>
             </div>
         )
     }

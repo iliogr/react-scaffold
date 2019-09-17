@@ -1,6 +1,6 @@
 {
-    "name": "scaffold",
-    "version": "0.1.0",
+    "name": "react-scaffold",
+    "version": "0.1.1",
     "private": true,
     "dependencies": {
         "axios": "^0.18.1",
@@ -46,4 +46,3 @@
         "windows": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --config config/dev.config.js --hot --inline --open"
     }
 }
-   

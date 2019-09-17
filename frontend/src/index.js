@@ -1,18 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './Assets/sass/index.scss';
-import App from './App';
-import rootReducer from './Reducers'
-import registerServiceWorker from './registerServiceWorker';
-import {createStore, applyMiddleware, compose} from 'redux'
-import thunk from 'redux-thunk';
-import createHistory from 'history/createBrowserHistory'
-import {ConnectedRouter} from 'react-router-redux'
-import {Provider} from 'react-redux'
+import React                                    from 'react'
+import ReactDOM                                 from 'react-dom'
+import App                                      from './App'
+import rootReducer                              from './Reducers'
+import { createBrowserHistory }                 from 'history'
+import {Provider}                               from 'react-redux'
+import {createStore, applyMiddleware, compose}  from 'redux'
+import thunk                                    from 'redux-thunk'
+import { ConnectedRouter, routerMiddleware }    from 'connected-react-router'
 
-export const history = createHistory()
+import './Assets/sass/index.scss'
+import registerServiceWorker                    from './registerServiceWorker'
+
+export const history    = createBrowserHistory()
 const composedEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composedEnhancers(applyMiddleware(thunk)));
+const store = createStore(
+   rootReducer(history),
+   //preloadedState,
+   composedEnhancers(
+      applyMiddleware(
+         routerMiddleware(history),
+         thunk
+      )
+   )
+)
 
 ReactDOM.render(
     <Provider store={store}>

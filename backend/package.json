@@ -13,7 +13,7 @@
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.18.3",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "forever": "^1.0.0",
         "nodemon": "^1.19.1"
     },
